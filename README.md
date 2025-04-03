@@ -42,48 +42,51 @@ Após iniciar o Docker, a API estará disponível no endereço configurado `http
 ## Endpoints
 
 ### 1. `GET /users`
+
 - **Descrição**: Retorna todos os usuários registrados no sistema.
 
 ### 2. `GET /users/:id`
+
 - **Descrição**: Retorna os dados de um único usuário baseado no ID fornecido.
 - **Parâmetros**:
   - `id`: ID do usuário.
 
 ### 3. `POST /users`
+
 - **Descrição**: Cria um novo usuário no sistema com as informações fornecidas no corpo da requisição.
 - **Corpo da requisição**:
-    ```json
-    {
-      "name": "Novo Usuário",
-      "email": "novo@usuario.com",
-      "password": "senha"
-    }
-    ```
+  ```json
+  {
+    "name": "Novo Usuário",
+    "email": "novo@usuario.com",
+    "password": "senha"
+  }
+  ```
 
 ### 4. `POST /users/login`
+
 - **Descrição**: Realiza o login de um usuário, verificando suas credenciais.
 - **Corpo da requisição**:
-    ```json
-    {
-      "email": "usuario@email.com",
-      "password": "senha"
-    }
-    ```
+  ```json
+  {
+    "email": "usuario@email.com",
+    "password": "senha"
+  }
+  ```
 
 ### 5. `PUT /users/:id`
+
 - **Descrição**: Atualiza os dados de um usuário existente com base no ID fornecido.
 - **Parâmetros**:
   - `id`: ID do usuário.
 - **Corpo da requisição**:
-    ```json
-    {
-      "name": "João Atualizado",
-      "email": "joao_atualizado@email.com",
-      "password": "nova_senha"
-    }
-    ```
-
-
+  ```json
+  {
+    "name": "João Atualizado",
+    "email": "joao_atualizado@email.com",
+    "password": "nova_senha"
+  }
+  ```
 
 ## 📄 Licença
 

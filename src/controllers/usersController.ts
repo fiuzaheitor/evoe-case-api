@@ -4,7 +4,7 @@ export const getAllUsers = async (req: any, res: any) => {
   try {
     const { fields } = req.query;
 
-    const users = await getUsers({ fields: fields.replace(",", " ")  || "*" });
+    const users = await getUsers({ fields: fields.replace(",", " ") || "*" });
     res.status(200).json(users);
   } catch (err) {
     res.status(500).json({ error: "Internal Server Error" });
@@ -15,7 +15,10 @@ export const getUserById = async (req: any, res: any) => {
   try {
     const { id } = req.params;
     const { fields } = req.query;
-    const user = await getUsers({ id, fields: fields.replace(",", " ") || "*" });
+    const user = await getUsers({
+      id,
+      fields: fields.replace(",", " ") || "*",
+    });
 
     if (user) {
       res.status(200).json(user);
@@ -55,7 +58,7 @@ export const loginUserController = async (req: any, res: any) => {
 export const updateUserController = async (req: any, res: any) => {
   try {
     const { id } = req.params;
-    const { name, email, password, } = req.body;
+    const { name, email, password } = req.body;
     const user = await updateUser({ user_id: id, name, email, password });
 
     if (user) {

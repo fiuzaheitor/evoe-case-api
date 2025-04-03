@@ -107,11 +107,9 @@ export const loginUser = async ({
     throw new Error("Senha incorreta.");
   }
 
-  return jwt.sign(
-    { id: rows[0].user_id },
-    process.env.JWT_SECRET as string,
-    { expiresIn: "30d" },
-  );
+  return jwt.sign({ id: rows[0].user_id }, process.env.JWT_SECRET as string, {
+    expiresIn: "30d",
+  });
 };
 
 export const updateUser = async ({
